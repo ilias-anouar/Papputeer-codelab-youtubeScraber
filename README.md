@@ -535,3 +535,21 @@ const processV = async (toProcess, start, option) => {
   }
 };
 
+   psql -h your_centos_vm_ip -U youruser -d yourdatabase
+   ```
+
+   Replace `your_centos_vm_ip`, `youruser`, and `yourdatabase` with the appropriate values.
+
+6. **Check for PostgreSQL Errors**: Review the PostgreSQL logs on your CentOS 7 virtual machine for any error messages that might provide clues about the connection issue. You can typically find PostgreSQL logs in the `/var/log/postgresql/` directory.
+
+7. **Node.js Application Logging**: Add some logging statements to your Node.js application to capture any error messages or debug information related to the database connection.
+
+8. **Network Connectivity**: Ensure that there are no network issues between your local machine and the CentOS 7 virtual machine. You can test network connectivity using tools like `ping` or `telnet` to verify that you can reach the virtual machine's IP address on port 5432.
+
+9. **Security Groups or Network ACLs (If Using a Cloud VM)**: If you are running your CentOS 7 virtual machine on a cloud provider (e.g., AWS, Azure), check the security groups or network ACLs to ensure that they allow incoming traffic on port 5432 from your local IP address.
+
+10. **Firewall on Your Local Machine**: Check if there's a firewall running on your local machine that might be blocking outgoing connections to port 5432.
+
+By carefully reviewing and testing each of these steps, you should be able to identify and resolve the connection issue between your Node.js application and the PostgreSQL database on your CentOS 7 virtual machine.
+
+
